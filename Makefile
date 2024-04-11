@@ -1,13 +1,17 @@
 DATADIR=/home/jihyeole/data
 DOCKERCOMPOSE = ./srcs/docker-compose.yml
 
-all:
+all: setup up
+
+setup:
 	mkdir -p $(DATADIR)/db
 	mkdir -p $(DATADIR)/wp
+
+up:
 	docker-compose -f $(DOCKERCOMPOSE) build 
 	docker-compose -f $(DOCKERCOMPOSE) up -d 
 
-stop:
+down:
 	docker-compose -f $(DOCKERCOMPOSE) down
 
 clean:
@@ -18,4 +22,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all stop clean fclean re
+.PHONY: all setup up down clean fclean re
