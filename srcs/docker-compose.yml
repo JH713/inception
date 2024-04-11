@@ -1,5 +1,6 @@
 services:
   mariadb:
+    container_name: mariadb
     image: mariadb:inception
     build: ./requirements/mariadb
     volumes:
@@ -12,6 +13,7 @@ services:
     expose:
       - 3306
   wordpress:
+    container_name: wordpress
     image: wordpress:inception
     build: ./requirements/wordpress
     depends_on:
@@ -26,6 +28,7 @@ services:
     expose:
       - 9000
   nginx:
+    container_name: nginx
     image: nginx:inception
     build: ./requirements/nginx
     depends_on:
