@@ -1,4 +1,4 @@
-DATADIR=/Users/jihyeole/data
+DATADIR=/home/jihyeole/data
 DOCKERCOMPOSE = ./srcs/docker-compose.yml
 
 all:
